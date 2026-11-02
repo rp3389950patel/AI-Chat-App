@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(22, 22, 22);
+}
+
+
+
+.app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: #292828;
+}
+
+
+
+
+
+
+
+.chat-area {
+    position: relative;
+
+    width: calc(100% - 72px);
+    height: 100vh;
+
+    background: #0e0d0d;
+}
+
+
+
+.top-bar {
+    height: 75px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+
+
+.mode-switch {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #121111;
+
+    border-radius: 30px;
+
+    padding: 3px;
+
+    background: #2a2929;
+}
+
+.mode {
+    border: none;
+
+    background: transparent;
+
+    padding: 10px 28px;
+
+    border-radius: 25px;
+
+    font-size: 15px;
+
+    color: #0677f0;
+
+    cursor: pointer;
+}
+
+.mode.active {
+    background: #555;
+
+    color: #dedddd;
+
+    font-weight: 600;
+}
+
+
+
+
+.top-actions {
+    position: absolute;
+
+    right: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+
+
+.upgrade {
+    border: 1px solid #181414;
+
+    background: rgb(0, 0, 0);
+
+    padding: 9px 15px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+    color: #0677f0;
+}
+
+.upgrade:hover {
+    background: #a4a8b0;
+}
+
+
+
+
+.share {
+    border: none;
+
+    background: transparent;
+
+    padding: 9px 12px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.share:hover {
+    background: #444;
+}
+
+
+
+
+.more {
+    border: none;
+
+    background: transparent;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+.more:hover {
+    background: #444;
+}
+
+
+
+
+.messages {
+    position: absolute;
+
+    top: 75px;
+    left: 0;
+    right: 0;
+    bottom: 160px;
+
+    overflow-y: auto;
+}
+
+
+
+
+.input-container {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 45px;
+
+    transform: translateX(-50%);
+
+    width: min(680px, 85%);
+}
+
+
+
+.chat-input {
+    width: 100%;
+
+    max-width: 700px;
+
+    border: 1px solid #0e0d0d;
+
+    border-radius: 40px;
+
+    background: #262626;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 8px 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+.input-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+
+
+.plus {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    font-size: 29px;
+
+    color: #f6eeee;
+
+    cursor: pointer;
+}
+
+.plus:hover {
+    background: #515050;
+}
+
+.plus {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.plus.tooltip {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #222;
+    color: #fff;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s ease;
+}
+
+
+.plus:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+.ask-anything {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-size: 20px;
+    font-family: inherit;
+    color: #fff;
+}
+
+.ask-anything::placeholder {
+    color: #8a8a8a;
+}
+
+.ask-anything:focus {
+    outline: none;
+}
+
+
+
+.input-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+}
+
+
+
+
+.think {
+    border: none;
+
+    background: transparent;
+
+    padding: 9px 12px;
+
+    border-radius: 20px;
+
+    font-size: 20px;
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+}
+
+.think:hover {
+    background: #515050;
+}
+
+
+
+
+.mic {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    color: #fff;
+
+}
+
+.voice {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    color: #1033e1;
+    background: #0677f0;
+}
+
+.mic:hover,
+.voice:hover {
+    background: #a8bbf7;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 55px;
+    }
+
+    .chat-area {
+        width: calc(100% - 55px);
+    }
+
+    .top-actions {
+        right: 8px;
+    }
+
+    .upgrade {
+        padding: 7px 9px;
+        font-size: 20px;
+    }
+
+    .share span {
+        display: none;
+    }
+
+    .share {
+        width: 35px;
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .mode {
+        padding: 8px 16px;
+        font-size: 20px;
+    }
+
+    .input-container {
+        width: 94%;
+        bottom: 25px;
+    }
+
+    .chat-input {
+        min-height: 62px;
+    }
+
+    .ask-anything {
+        font-size: 20px;
+    }
+
+    .think {
+        padding: 7px;
+    }
+}
+
+.think {
+    position: relative;
+    cursor: pointer;
+}
+
+.think .tooltip {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #222;
+    color: #fff;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s ease;
+}
+
+
+.think:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mic {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.mic .tooltip {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #222;
+    color: #fff;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s ease;
+}
+
+
+.mic:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.voice {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.voice .tooltip {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #222;
+    color: #fff;
+
+    padding: 7px 10px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s ease;
+}
+
+
+.voice:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 210px;
+    padding: 6px;
+    background: #2e2929;
+
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    animation: dropdownFade 0.18s ease;
+}
+
+
+.dropdown .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 12px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dropdown .item i {
+    width: 18px;
+    font-size: 15px;
+    color: #666;
+}
+
+.dropdown .item:hover {
+    background: #7b7777;
+}
+
+
+.dropdown .item:nth-child(4) {
+    color: #e53935;
+}
+
+.dropdown .item:nth-child(4) i {
+    color: #e53935;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

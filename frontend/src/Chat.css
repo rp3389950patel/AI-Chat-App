@@ -1,0 +1,121 @@
+.chats {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px 20px 140px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 180px;
+    margin-bottom: 30px;
+}
+
+
+.userdiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.gptdiv {
+    width: 100%;
+
+    justify-content: flex-start;
+}
+
+.usermsg {
+    max-width: 70%;
+    background: #2f2f2f;
+    color: #ffffff;
+
+    padding: 12px 17px;
+    border-radius: 18px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin: 0;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+
+}
+
+
+
+
+.gptmsg {
+    width: 100%;
+    max-width: 100%;
+
+    color: #ececec;
+
+    padding: 8px 5px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    margin: 0;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.gptmsg pre {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #1b1a1a;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+
+    padding: 16px;
+    margin: 16px 0;
+
+    overflow-x: auto;
+}
+
+.gptmsg pre code {
+    display: block;
+
+    background: transparent;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+
+    padding: 0;
+}
+
+.gptmsg hr {
+    display: none !important;
+    border: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gptmsg * {
+    border-bottom: none !important;
+}
+
+.hljs {
+    border-radius: 15px !important;
+}
+
+pre {
+    white-space: pre-wrap;
+}
